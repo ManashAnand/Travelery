@@ -1,14 +1,83 @@
 import React from "react";
 
-const ContributerCard = ({ data }) => {
+const ContributerCard = () => {
+  const data = [
+    {
+      description: "Exploring a scenic trail",
+      name: "John Doe",
+      date: "2023-12-01",
+      time: "15:30",
+      number: "ABC123",
+      preferredVehicle: "SUV",
+      location: "Bagulur"
+    },
+    {
+      description: "Exploring a scenic trail",
+      name: "John Doe",
+      date: "2023-12-01",
+      time: "15:30",
+      number: "ABC123",
+      preferredVehicle: "SUV",
+      location: "Bagulur"
+    },
+    {
+      description: "Exploring a scenic trail",
+      name: "John Doe",
+      date: "2023-12-01",
+      time: "15:30",
+      number: "ABC123",
+      preferredVehicle: "SUV",
+      location: "Majestic"
+    },
+    {
+      description: "City tour and sightseeing",
+      name: "Jane Smith",
+      date: "2023-12-05",
+      time: "10:00",
+      number: "XYZ456",
+      preferredVehicle: "Sedan",
+      location: "Bagulur"
+    },
+    {
+      description: "Adventure in the mountains",
+      name: "Alex Johnson",
+      date: "2023-12-10",
+      time: "12:45",
+      number: "123DEF",
+      preferredVehicle: "Off-road Vehicle",
+      location: "Majestic"
+    },
+    {
+      description: "Relaxing beach day",
+      name: "Emily Brown",
+      date: "2023-12-15",
+      time: "14:15",
+      number: "GHI789",
+      preferredVehicle: "Convertible",
+      location: "Majestic"
+    },
+    {
+      description: "Relaxing beach day",
+      name: "Emily Brown",
+      date: "2023-12-15",
+      time: "14:15",
+      number: "GHI789",
+      preferredVehicle: "Convertible",
+      location: "Bagulur"
+    },
+  
+  ];
+
   const getRandomColor = () => {
-    const colors = ["#E9CE2C", "#654C4F", "#0081af"];
+    const colors = ["#E9CE2C", "#654C4F", "#0081af","#94B0DA","#16BAC5"];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     return randomColor;
   };
 
   return (
     <>
+    <div className="w-full text-3xl flex justify-start items-center font-bold mt-4 text-[#654C4F]">Free Ride's</div>
+
        <div className=" md:grid grid-cols-3 gap-4 flex flex-col mt-6  w-full">
    
    {data?.map((item) => (
@@ -33,6 +102,13 @@ const ContributerCard = ({ data }) => {
            {item?.description}
          </p>
        </blockquote>
+
+       <blockquote>
+            <p className="text-2xl  font-bold  text-red-500">
+              {item?.location}
+            </p>
+          </blockquote>
+
        <figcaption className="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
          <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-white">
            <cite className="pe-3 font-medium text-white">{item?.name}</cite>
@@ -46,9 +122,11 @@ const ContributerCard = ({ data }) => {
            <cite className="ps-3 text-sm text-white">{item?.time}</cite>
          </div>
        </figcaption>
-       {/* <div className="text-white mt-2">
-         Preferred vehicle: {item?.preferredVehicle}
-       </div> */}
+
+       
+       <div className="text-white mt-2">
+         User Vehicle: {item?.preferredVehicle}
+       </div>
      
        <button
          type="button"

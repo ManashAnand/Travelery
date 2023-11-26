@@ -58,16 +58,8 @@ const Navbar = () => {
           <li>
             <a
               href="#"
-              className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+              className="block py-2 px-3 text-white  rounded md:bg-transparent md:dark:hover:text-[#E9CE2C] md:p-0 dark:text-white "
               aria-current="page"
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-[#654C4F] dark:hover:text-white md:dark:hover:bg-transparent"
             >
               About
             </a>
@@ -75,19 +67,28 @@ const Navbar = () => {
           <li>
             <a
               href="#"
-              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-[#654C4F] dark:hover:text-white md:dark:hover:bg-transparent"
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-[#E9CE2C] dark:hover:bg-[#654C4F] dark:hover:text-white md:dark:hover:bg-transparent"
             >
-              Services
+              Maps
             </a>
           </li>
           <li>
             <a
               href="#"
-              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-[#654C4F] dark:hover:text-white md:dark:hover:bg-transparent"
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-[#E9CE2C] dark:hover:bg-[#654C4F] dark:hover:text-white md:dark:hover:bg-transparent"
             >
-              Pricing
+              Post
             </a>
           </li>
+          <li>
+            <a
+              href="#"
+              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-[#E9CE2C] dark:hover:bg-[#654C4F] dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              Login
+            </a>
+          </li>
+        
           <li>
             <label className="relative inline-flex items-center me-5 cursor-pointer">
               <input
