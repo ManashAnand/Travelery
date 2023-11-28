@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 const ContributerCard = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -7,6 +8,8 @@ const ContributerCard = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const state = useSelector((state) => state.user);
 
   const data = [
     {
@@ -82,6 +85,9 @@ const ContributerCard = () => {
 
   return (
     <>
+    {
+      state && (
+        <>
       <div className="w-full text-3xl flex justify-between items-center font-bold mt-4 text-[#654C4F] ">
         <div>Equal contributions</div>
 
@@ -158,6 +164,10 @@ const ContributerCard = () => {
       )}
     </div>
       </div>
+
+        </>
+      )
+    }
 
       <div className=" md:grid grid-cols-3 gap-4 flex flex-col mt-6  w-full">
         {data?.map((item) => (

@@ -3,6 +3,9 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = () => {
+
+  
+
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(true);
 
@@ -64,14 +67,14 @@ const Navbar = () => {
               About
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               href="/map"
               className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-[#E9CE2C] dark:hover:bg-[#E9CE2C] dark:hover:text-white md:dark:hover:bg-transparent"
             >
               Maps
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               href="/Post"
