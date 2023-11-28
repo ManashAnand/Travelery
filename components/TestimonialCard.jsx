@@ -7,7 +7,7 @@ const TestimonialCard = ({data}) => {
      <div className=" mt-6 w-full mb-8 ">
   <Marquee pauseOnHover gradient>
     {
-        data?.map((item) => {
+        data?.filter(item => item?.role === "Testimonials")?.map((item) => {
             return(
                 <>
                 <figure className=" ml-10 mt-4 relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10">
@@ -18,16 +18,16 @@ const TestimonialCard = ({data}) => {
     </svg>
     <blockquote className="relative">
         <p className="text-lg tracking-tight text-slate-900">
-            Awesome idea. Can't wait to see how this turns out!
+            {item?.descp}
         </p>
     </blockquote>
     <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100 pt-6">
         <div>
-            <div className="font-display text-base text-slate-900">Exmaple name</div>
-            <div className="mt-1 text-sm text-slate-500">Job designation</div>
+            <div className="font-display text-base text-slate-900">{item?.name}</div>
+            <div className="mt-1 text-sm text-slate-500">{item?.dateOfTravel}</div>
         </div>
         <div className="overflow-hidden rounded-full bg-slate-50">
-                <span>Name</span>
+                <span>{item?.timeOfTravel}</span>
         </div>
     </figcaption>
     <button

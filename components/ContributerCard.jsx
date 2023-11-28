@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
-const ContributerCard = () => {
+const ContributerCard = ({data:Post}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  console.log(Post);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -11,71 +13,6 @@ const ContributerCard = () => {
 
   const state = useSelector((state) => state.user);
 
-  const data = [
-    {
-      description: "Exploring a scenic trail",
-      name: "John Doe",
-      date: "2023-12-01",
-      time: "15:30",
-      number: "ABC123",
-      preferredVehicle: "SUV",
-      location: "Bagulur",
-    },
-    {
-      description: "Exploring a scenic trail",
-      name: "John Doe",
-      date: "2023-12-01",
-      time: "15:30",
-      number: "ABC123",
-      preferredVehicle: "SUV",
-      location: "Bagulur",
-    },
-    {
-      description: "Exploring a scenic trail",
-      name: "John Doe",
-      date: "2023-12-01",
-      time: "15:30",
-      number: "ABC123",
-      preferredVehicle: "SUV",
-      location: "Majestic",
-    },
-    {
-      description: "City tour and sightseeing",
-      name: "Jane Smith",
-      date: "2023-12-05",
-      time: "10:00",
-      number: "XYZ456",
-      preferredVehicle: "Sedan",
-      location: "Bagulur",
-    },
-    {
-      description: "Adventure in the mountains",
-      name: "Alex Johnson",
-      date: "2023-12-10",
-      time: "12:45",
-      number: "123DEF",
-      preferredVehicle: "Off-road Vehicle",
-      location: "Majestic",
-    },
-    {
-      description: "Relaxing beach day",
-      name: "Emily Brown",
-      date: "2023-12-15",
-      time: "14:15",
-      number: "GHI789",
-      preferredVehicle: "Convertible",
-      location: "Majestic",
-    },
-    {
-      description: "Relaxing beach day",
-      name: "Emily Brown",
-      date: "2023-12-15",
-      time: "14:15",
-      number: "GHI789",
-      preferredVehicle: "Convertible",
-      location: "Bagulur",
-    },
-  ];
 
   const getRandomColor = () => {
     const colors = ["#E9CE2C", "#654C4F", "#0081af","#94B0DA","#16BAC5"];
@@ -85,10 +22,8 @@ const ContributerCard = () => {
 
   return (
     <>
-    {
-      state && (
-        <>
-      <div className="w-full text-3xl flex justify-between items-center font-bold mt-4 text-[#654C4F] ">
+    
+      <div  className="w-full text-3xl flex justify-between items-center font-bold mt-4 text-[#654C4F] ">
         <div>Equal contributions</div>
 
         <div className="relative inline-block"> 
@@ -165,20 +100,17 @@ const ContributerCard = () => {
     </div>
       </div>
 
-        </>
-      )
-    }
-
       <div className=" md:grid grid-cols-3 gap-4 flex flex-col mt-6  w-full">
-        {data?.map((item) => (
-          <figure
+        {Post?.filter(item => item?.role === "Equity").map((item) => (
+          <figure 
+          key={item?.id}
             style={{ backgroundColor: getRandomColor() }}
             className="  text-center p-6 rounded-lg shadow-lg min-w-3xl"
           >
             <svg
               className="w-10 h-10 mx-auto mb-3 text-white"
               aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="http://www.w3.org/2000/svg" 
               fill="currentColor"
               viewBox="0 0 18 14"
             >
@@ -189,7 +121,7 @@ const ContributerCard = () => {
             </svg>
             <blockquote>
               <p className="text-2xl italic font-medium text-white">
-                {item?.description}
+                {item?.descp}
               </p>
             </blockquote>
             <blockquote>
@@ -209,9 +141,9 @@ const ContributerCard = () => {
             <figcaption className="flex items-center justify-center mt-2 space-x-3 rtl:space-x-reverse">
               <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-white">
                 <cite className="pe-3 font-medium text-white">
-                  {item?.date}
+                  {item?.dateOfTravel}
                 </cite>
-                <cite className="ps-3 text-sm text-white">{item?.time}</cite>
+                <cite className="ps-3 text-sm text-white">{item?.timeOfTravel}</cite>
               </div>
             </figcaption>
             <div className="text-white mt-2">

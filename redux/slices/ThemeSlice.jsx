@@ -5,14 +5,14 @@ const ThemeSlice =  createSlice({
     initialState:false,
     reducers:{
     
-        logIn(state,action){
+        dark(state,action){
             // console.log("From userslice")
             return state = true;
         },
-        logOut(state, action) {
+        light(state, action) {
             return state = false;
           },
     }
 })
 export default ThemeSlice.reducer;
-export const {logIn,logOut} = ThemeSlice.actions
+export const {dark,light} = ThemeSlice.actions

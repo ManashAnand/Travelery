@@ -1,0 +1,40 @@
+org: manash
+app: kuchbhi2
+service: travelery
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Resource: '*'
+          Action:
+            - dynamodb:*
+            - s3:*
+
+
+configValidationMode: error
+
+functions:
+  PostTravelTravelry:
+    handler: /handlers/PostTravel.handler
+    events:
+      - httpApi:
+          path: /
+          method: post
+  GetAllTravels:
+    handler: /handlers/getTravel.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+  GetAllTravelsByRole:
+    handler: /handlers/getTravelByRole.handler
+    events:
+      - httpApi:
+          path: /travel
+          method: post

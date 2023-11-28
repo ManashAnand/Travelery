@@ -1,73 +1,7 @@
 import React from "react";
 
-const ContributerCard = () => {
-  const data = [
-    {
-      description: "Exploring a scenic trail",
-      name: "John Doe",
-      date: "2023-12-01",
-      time: "15:30",
-      number: "ABC123",
-      preferredVehicle: "SUV",
-      location: "Bagulur"
-    },
-    {
-      description: "Exploring a scenic trail",
-      name: "John Doe",
-      date: "2023-12-01",
-      time: "15:30",
-      number: "ABC123",
-      preferredVehicle: "SUV",
-      location: "Bagulur"
-    },
-    {
-      description: "Exploring a scenic trail",
-      name: "John Doe",
-      date: "2023-12-01",
-      time: "15:30",
-      number: "ABC123",
-      preferredVehicle: "SUV",
-      location: "Majestic"
-    },
-    {
-      description: "City tour and sightseeing",
-      name: "Jane Smith",
-      date: "2023-12-05",
-      time: "10:00",
-      number: "XYZ456",
-      preferredVehicle: "Sedan",
-      location: "Bagulur"
-    },
-    {
-      description: "Adventure in the mountains",
-      name: "Alex Johnson",
-      date: "2023-12-10",
-      time: "12:45",
-      number: "123DEF",
-      preferredVehicle: "Off-road Vehicle",
-      location: "Majestic"
-    },
-    {
-      description: "Relaxing beach day",
-      name: "Emily Brown",
-      date: "2023-12-15",
-      time: "14:15",
-      number: "GHI789",
-      preferredVehicle: "Convertible",
-      location: "Majestic"
-    },
-    {
-      description: "Relaxing beach day",
-      name: "Emily Brown",
-      date: "2023-12-15",
-      time: "14:15",
-      number: "GHI789",
-      preferredVehicle: "Convertible",
-      location: "Bagulur"
-    },
-  
-  ];
-
+const ContributerCard = ({data:Free}) => {
+ 
   const getRandomColor = () => {
     const colors = ["#E9CE2C", "#654C4F", "#0081af","#94B0DA","#16BAC5"];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -80,7 +14,7 @@ const ContributerCard = () => {
 
        <div className=" md:grid grid-cols-3 gap-4 flex flex-col mt-6  w-full">
    
-   {data?.map((item) => (
+   {Free?.filter(item => item?.role === "Free")?.map((item) => (
      <figure
        style={{ backgroundColor: getRandomColor() }}
        className="  text-center p-6 rounded-lg shadow-lg min-w-3xl"
@@ -99,7 +33,7 @@ const ContributerCard = () => {
        </svg>
        <blockquote>
          <p className="text-2xl italic font-medium text-white">
-           {item?.description}
+           {item?.descp}
          </p>
        </blockquote>
 
@@ -118,8 +52,8 @@ const ContributerCard = () => {
 
        <figcaption className="flex items-center justify-center mt-2 space-x-3 rtl:space-x-reverse">
          <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-white">
-           <cite className="pe-3 font-medium text-white">{item?.date}</cite>
-           <cite className="ps-3 text-sm text-white">{item?.time}</cite>
+           <cite className="pe-3 font-medium text-white">{item?.dateOfTravel}</cite>
+           <cite className="ps-3 text-sm text-white">{item?.timeOfTravel}</cite>
          </div>
        </figcaption>
 
