@@ -83,7 +83,7 @@ const ContributerCard = () => {
   return (
     <>
       <div className="w-full text-3xl flex justify-between items-center font-bold mt-4 text-[#654C4F] ">
-        <div>Equal contribution's</div>
+        <div>Equal contributions</div>
 
         <div className="relative inline-block"> 
       <button
@@ -92,7 +92,7 @@ const ContributerCard = () => {
         className="text-white bg-blue-700 hover:bg-[#654C4F]  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-[#654C4F] "
         type="button"
       >
-       Common Locations {' '}
+       Common Locations 
         <svg
           className="w-2.5 h-2.5 ms-3"
           aria-hidden="true"

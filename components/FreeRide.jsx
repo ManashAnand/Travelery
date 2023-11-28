@@ -76,7 +76,7 @@ const ContributerCard = () => {
 
   return (
     <>
-    <div className="w-full text-3xl flex justify-start items-center font-bold mt-4 text-[#654C4F]">Free Ride's</div>
+    <div className="w-full text-3xl flex justify-start items-center font-bold mt-4 text-[#654C4F]">Free Rides</div>
 
        <div className=" md:grid grid-cols-3 gap-4 flex flex-col mt-6  w-full">
    

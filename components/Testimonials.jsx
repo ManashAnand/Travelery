@@ -65,7 +65,7 @@ const Testimonials = () => {
       ];
   return (
     <>
-      <div className="w-full text-3xl flex justify-start items-center font-bold mt-4 text-[#654C4F]">Testimonial's</div>
+      <div className="w-full text-3xl flex justify-start items-center font-bold mt-4 text-[#654C4F]">Testimonials</div>
 
       <TestimonialCard data={data}/>
     </>
