@@ -4,8 +4,13 @@ import { useSelector } from "react-redux";
 
 const ContributerCard = ({data:Post}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedLocation, setSelectedLocation] = useState(null);
 
-  console.log(Post);
+
+  const handleLocationSelect = (location) => {
+    setSelectedLocation(location);
+    setIsDropdownOpen(false);
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -55,44 +60,39 @@ const ContributerCard = ({data:Post}) => {
         <div className="absolute z-10 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-[#463638] -translate-x-16 sm:-translate-x-0">
           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
             <li>
-              <a
-                href="#"
+              <button  onClick={() => handleLocationSelect('bagulur')}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Bagulur
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button  onClick={() => handleLocationSelect('majestic')}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Majestic
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button  onClick={() => handleLocationSelect('airport')}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Airport
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button  onClick={() => handleLocationSelect('station')}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Station
-              </a>
+              </button>
             </li>
             <li>
-              <a
-                href="#"
+              <button  onClick={() => handleLocationSelect(null)}
                 className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
-                Others
-              </a>
+                All Journey
+              </button>
             </li>
           </ul>
         </div>
@@ -101,7 +101,11 @@ const ContributerCard = ({data:Post}) => {
       </div>
 
       <div className=" md:grid grid-cols-3 gap-4 flex flex-col mt-6  w-full">
-        {Post?.filter(item => item?.role === "Equity").map((item) => (
+      {Post?.filter(
+          (item) =>
+            item?.role === 'Equity' &&
+            (!selectedLocation || item?.location === selectedLocation)
+        ).map((item) => (
           <figure 
           key={item?.id}
             style={{ backgroundColor: getRandomColor() }}
