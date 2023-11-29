@@ -7,27 +7,39 @@ const About = () => {
         title: "FAQ (How it works)",
         rows: [
             {
-                title: "Lorem ipsum dolor sit amet,",
-                content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
-                  ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
-                  In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
-                  Fusce sed commodo purus, at tempus turpis.`,
+                title: "What Travelery is about?",
+                content: `The major problem in our college is going anywhere outside because of high price and remote location .<br/> Here we came into action where we keep a log of who is going where and can we mutually go there and save money + time`,
             },
             {
-                title: "Nunc maximus, magna at ultricies elementum",
+                title: "What is Equal contribution?",
                 content:
-                    "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
+                    "Equal contibution mean the fair of the ride will be divided equally between all the peers .",
             },
             {
-                title: "Curabitur laoreet, mauris vel blandit fringilla",
-                content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
-                Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
-                Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
-                Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+                title: "What is Free rides?",
+                content: `In every college many folks have car or bike for  travel purpose, So if they are okay with it and want to help can give you free ride . `,
             },
             {
                 title: "What is the package version",
-                content: <p>current version is 1.2.1</p>,
+                content: <h1 style={{color:"red"}}>current version is 1.0.0</h1>,
+            },
+            {
+                title: "What is the Testimonials",
+                content: `Testimonial as in a feedback for us what you guys want from us <br/> Is the site compatible ? <br/> Are we satisfying you ? <br/> We are open for every feedback!!!` ,
+            },   
+            {
+                title: "Are the data user provide are secured ?",
+                content: `All the data that are displayed on site are visible to everyone<br/> 
+                    Honestly I myself concern about the mobile number of every user at first<br/>
+                    But to be very honest , In college it's not hard to get anyone number   
+                    <br/> Still if you guys think that instead of number we should give a chat option <br/>
+                    You can write a testimonials and after a subsequent number we will update our page for chats.
+                ` 
+            },
+            {
+                title: "In calender the date are not selected visibly ?",
+                content: ` We are working on the visibility issue but it should work fine just put a date and then choose time and submit a post . Sorry for inconvience.
+                ` 
             },
         ],
     };

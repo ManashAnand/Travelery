@@ -1,6 +1,8 @@
 "use client";
 import Calender from "@/components/Calender";
 import TimePicker from "@/components/TImepicker/Timepicker";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Post = () => {
@@ -8,28 +10,29 @@ const Post = () => {
   const [role, setRole] = useState("Equity");
   const [name, setName] = useState("");
   const [no, setNo] = useState("");
-  const [dest,setLocation] = useState("");
-  const [vehicle,setvehicle] = useState("");
- 
+  const [dest, setLocation] = useState("");
+  const [vehicle, setvehicle] = useState("");
+
   const [calendarValue, setCalendarValue] = useState(new Date());
   const [timePickerValue, setTimePickerValue] = useState("12:00 PM");
 
+  const router = useRouter();
 
   const handleCalendarChange = (value) => {
-    console.log("from post page")
-    const formattedDate = value.toLocaleDateString('en-US', {
-      weekday: 'short',
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric'
-  });
+    console.log("from post page");
+    const formattedDate = value.toLocaleDateString("en-US", {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
     setCalendarValue(formattedDate);
     console.log("Calendar Value:", formattedDate);
   };
 
   // Callback function to handle time picker value change
   const handleTimePickerChange = (value) => {
-    console.log("from post page")
+    console.log("from post page");
     setTimePickerValue(value);
     console.log("Time Picker Value:", value);
   };
@@ -38,7 +41,7 @@ const Post = () => {
     setChar(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (char.length > 280) {
@@ -50,9 +53,44 @@ const Post = () => {
     console.log(name);
     console.log(no);
     console.log(dest.toLowerCase());
-    console.log(vehicle)
-    console.log(calendarValue)
-    console.log(timePickerValue)
+    console.log(vehicle);
+    console.log(calendarValue);
+    console.log(timePickerValue);
+
+    // {
+    //   "id":"1",
+    //   "descp":"I am going to Testimonials",
+    //   "location":"Majestic",
+    //   "numberOfPerson":"123456789",
+    //   "dateOfTravel":"10032003",
+    //   "timeOfTravel":"8pm",
+    //   "preferredVehicle":"Auto",
+    //   "name":"Manash",
+    //   "role":"Testimonials"
+    // }
+    try {
+      const res = await axios.post(
+        "https://vbps4gqg55.execute-api.ap-south-1.amazonaws.com/",
+        {
+          descp: char,
+          location: dest.toLowerCase(),
+          numberOfPerson: no,
+          dateOfTravel: calendarValue,
+          timeOfTravel: timePickerValue,
+          preferredVehicle: vehicle,
+          name: name,
+          role,
+        }
+      );
+      console.log(res);
+      if(res.status  == 200){
+        router.push("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+
   };
 
   return (
@@ -138,7 +176,6 @@ const Post = () => {
                     required
                     value={no}
                     onChange={(e) => setNo(e.target.value)}
-              
                   />
                   <label
                     for="floating_phone"
@@ -151,16 +188,17 @@ const Post = () => {
             )}
           </div>
           <div className=" w-full flex justify-between sm:flex-row flex-col">
-            <Calender value={calendarValue} onChange={handleCalendarChange}/>
-            <TimePicker value={timePickerValue} onChange={handleTimePickerChange}/>
+            <Calender value={calendarValue} onChange={handleCalendarChange} />
+            <TimePicker
+              value={timePickerValue}
+              onChange={handleTimePickerChange}
+            />
           </div>
           {(role == "Equity" || role == "Free") && (
             <div class="max-w-full mx-auto mb-4">
               <label
                 for="message"
                 class="block mb-2 text-sm font-medium text-white dark:text-white"
-                
-                
               >
                 Location
               </label>
@@ -171,7 +209,6 @@ const Post = () => {
                 placeholder="Enter the location you want to go...."
                 value={dest}
                 onChange={(e) => setLocation(e.target.value)}
-              
               ></textarea>
             </div>
           )}
@@ -190,10 +227,8 @@ const Post = () => {
                   rows="1"
                   class="block p-2.5 w-full text-sm  bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 text-black"
                   placeholder="Enter the vehicle you want to ride on ... "
-                
                   value={vehicle}
-                onChange={(e) => setvehicle(e.target.value)}
-              
+                  onChange={(e) => setvehicle(e.target.value)}
                 ></textarea>
               </div>
             </>
