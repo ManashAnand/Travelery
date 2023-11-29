@@ -1,22 +1,13 @@
-"use client";
-import "./Timepicker.css";
-import React, { useRef, useEffect, useState, useCallback } from "react";
-import { TimepickerUI } from "timepicker-ui";
+import React, { useRef, useEffect, useState, useCallback } from 'react';
+import { TimepickerUI } from 'timepicker-ui';
 
-
-function TimePicker() {
+function TimePicker({ value, onChange }) {
   const tmRef = useRef(null);
-  const [inputValue, setInputValue] = useState("12:00 PM");
 
   const testHandler = useCallback(({ detail: { hour, minutes, type } }) => {
-    setInputValue(`${hour}:${minutes} ${type}`);
-  }, []);
-
-  useEffect(() => {
-    if (inputValue === "10:00 PM") {
-      alert("You selected 10:00 PM");
-    }
-  }, [inputValue]);
+    const selectedTime = `${hour}:${minutes} ${type}`;
+    onChange(selectedTime);
+  }, [onChange]);
 
   useEffect(() => {
     const tm = tmRef.current;
@@ -24,23 +15,18 @@ function TimePicker() {
     const newPicker = new TimepickerUI(tm, {});
     newPicker.create();
 
-    tm.addEventListener("accept", testHandler);
+    tm.addEventListener('accept', testHandler);
 
     return () => {
-      tm.removeEventListener("accept", testHandler);
+      tm.removeEventListener('accept', testHandler);
     };
   }, [testHandler]);
 
   return (
     <div className="timepicker-ui" ref={tmRef}>
-      <input
-        type="test"
-        className="timepicker-ui-input"
-        defaultValue={inputValue}
-      />
+      <input type="text" className="timepicker-ui-input" defaultValue={value} />
     </div>
   );
 }
-
 
 export default TimePicker;
