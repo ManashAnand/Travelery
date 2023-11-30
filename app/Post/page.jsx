@@ -57,17 +57,6 @@ const Post = () => {
     console.log(calendarValue);
     console.log(timePickerValue);
 
-    // {
-    //   "id":"1",
-    //   "descp":"I am going to Testimonials",
-    //   "location":"Majestic",
-    //   "numberOfPerson":"123456789",
-    //   "dateOfTravel":"10032003",
-    //   "timeOfTravel":"8pm",
-    //   "preferredVehicle":"Auto",
-    //   "name":"Manash",
-    //   "role":"Testimonials"
-    // }
     try {
       const res = await axios.post(
         "https://vbps4gqg55.execute-api.ap-south-1.amazonaws.com/",
