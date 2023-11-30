@@ -41,6 +41,13 @@ const About = () => {
                 content: ` We are working on the visibility issue but it should work fine just put a date and then choose time and submit a post . Sorry for inconvience.
                 ` 
             },
+            {
+                title: "Filter button is not working properly  ?",
+                content: `The thing is there is difference in user that write location name<br/>
+                For eg:- some write bagulur and some write baglur ( there is spelling mismatch )
+                It's is advised to all of you to write loaction as suggested in dropdown in landing page
+                ` 
+            },
         ],
     };
     const styles = {

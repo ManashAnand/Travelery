@@ -1,11 +1,15 @@
 "use client";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { mutate } from "swr";
 
 const ContributerCard = ({data:Post}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState(null);
 
+  const router = useRouter()
 
   const handleLocationSelect = (location) => {
     setSelectedLocation(location);
@@ -24,6 +28,27 @@ const ContributerCard = ({data:Post}) => {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     return randomColor;
   };
+
+  const handleDelete = async (_id) => {
+  
+    try {
+      const res = await axios.delete("https://vbps4gqg55.execute-api.ap-south-1.amazonaws.com/", {
+        data: { id: _id }, 
+    });
+      if(res){
+        mutate("https://vbps4gqg55.execute-api.ap-south-1.amazonaws.com/")
+        // router.refresh()
+      }
+      else{
+        alert("Not deleted")
+      }
+      
+    } catch (error) {
+      console.log(error)
+      console.log(error.response.data);
+
+    }
+  }
 
   return (
     <>
@@ -61,35 +86,35 @@ const ContributerCard = ({data:Post}) => {
           <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
             <li>
               <button  onClick={() => handleLocationSelect('bagulur')}
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Bagulur
               </button>
             </li>
             <li>
               <button  onClick={() => handleLocationSelect('majestic')}
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Majestic
               </button>
             </li>
             <li>
               <button  onClick={() => handleLocationSelect('airport')}
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 Airport
               </button>
             </li>
             <li>
-              <button  onClick={() => handleLocationSelect('station')}
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+              <button  onClick={() => handleLocationSelect('KSR')}
+                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
-                Station
+                KSR
               </button>
             </li>
             <li>
               <button  onClick={() => handleLocationSelect(null)}
-                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
               >
                 All Journey
               </button>
@@ -154,12 +179,13 @@ const ContributerCard = ({data:Post}) => {
               Preferred vehicle: {item?.preferredVehicle}
             </div>
 
-            <button
+             <button
               type="button"
               class="mt-2 text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+              onClick={() => handleDelete(item?.id)}
             >
               Delete
-            </button>
+            </button> 
           </figure>
         ))}
       </div>

@@ -40,3 +40,9 @@ functions:
       - httpApi:
           path: /travel
           method: post
+  deleteTravel:
+    handler: /handlers/deleteTravel.handler
+    events:
+      - httpApi:
+          path: /
+          method: delete
