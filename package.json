@@ -12,6 +12,8 @@
     "@reduxjs/toolkit": "^1.9.7",
     "aws-sdk": "^2.1505.0",
     "axios": "^1.6.2",
+    "framer-motion": "^10.16.9",
+    "lottie-react": "^2.4.0",
     "next": "14.0.3",
     "react": "^18",
     "react-calendar": "^4.6.1",
