@@ -60,7 +60,7 @@ const ContributerCard = ({data:Post}) => {
       <button
         id="dropdownDefaultButton"
         onClick={toggleDropdown}
-        className="text-white bg-blue-700 hover:bg-[#654C4F]  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-[#654C4F] "
+        className="text-white  hover:bg-[#654C4F]  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center bg-[#654C4F] "
         type="button"
       >
        Common Locations 
@@ -82,39 +82,39 @@ const ContributerCard = ({data:Post}) => {
       </button>
 
       {isDropdownOpen && (
-        <div className="absolute z-10 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-[#463638] -translate-x-16 sm:-translate-x-0">
-          <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+        <div className="absolute z-10 mt-2  divide-y divide-gray-100 rounded-lg shadow w-44 bg-[#463638] -translate-x-16 sm:-translate-x-0">
+          <ul className="py-2 text-sm text-gray-700 ">
             <li>
               <button  onClick={() => handleLocationSelect('bagulur')}
-                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block px-4 py-2 w-full  hover:bg-gray-600 hover:text-white"
               >
                 Bagulur
               </button>
             </li>
             <li>
               <button  onClick={() => handleLocationSelect('majestic')}
-                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block px-4 py-2 w-full  hover:bg-gray-600 hover:text-white"
               >
                 Majestic
               </button>
             </li>
             <li>
               <button  onClick={() => handleLocationSelect('airport')}
-                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block px-4 py-2 w-full  hover:bg-gray-600 hover:text-white"
               >
                 Airport
               </button>
             </li>
             <li>
               <button  onClick={() => handleLocationSelect('KSR')}
-                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block px-4 py-2 w-full  hover:bg-gray-600 hover:text-white"
               >
                 KSR
               </button>
             </li>
             <li>
               <button  onClick={() => handleLocationSelect(null)}
-                className="block px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                className="block px-4 py-2 w-full  hover:bg-gray-600 hover:text-white"
               >
                 All Journey
               </button>
@@ -181,7 +181,7 @@ const ContributerCard = ({data:Post}) => {
 
              {/* <button
               type="button"
-              class="mt-2 text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+              class="mt-2  border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 border-red-500 text-red-500 hover:text-white hover:bg-red-600 focus:ring-red-900"
               onClick={() => handleDelete(item?.id)}
             >
               Delete

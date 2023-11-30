@@ -13,12 +13,12 @@ const BottomNav = () => {
 
   return (
     <>
-      <div className=" fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-[#654C4F]  rounded-full bottom-4 left-1/2 dark:bg-[#654C4F]">
+      <div className=" fixed z-50 w-full h-16 max-w-lg -translate-x-1/2   rounded-full bottom-4 left-1/2 bg-[#654C4F]">
         <div className="grid h-full max-w-lg grid-cols-5 mx-auto">
           <button
             data-tooltip-target="tooltip-home"
             type="button"
-            className="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
+            className="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-800 group"
             onClick={() => router.push('/')}
           >
             <CiHome className="w-8 h-8 text-white"/>
@@ -26,7 +26,7 @@ const BottomNav = () => {
           <div
             id="tooltip-home"
             role="tooltip"
-            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip "
             onClick={() => router.push('/about')}
           >
             About
@@ -35,7 +35,7 @@ const BottomNav = () => {
           <button
             data-tooltip-target="tooltip-wallet"
             type="button"
-            className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+            className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-800 group"
             onClick={() => router.push('/about')}
           >
            <CiCircleQuestion className="w-8 h-8 text-white"/>
@@ -43,7 +43,7 @@ const BottomNav = () => {
           <div
             id="tooltip-wallet"
             role="tooltip"
-            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip "
           >
             Wallet
             <div className="tooltip-arrow" data-popper-arrow></div>
@@ -52,7 +52,7 @@ const BottomNav = () => {
             <button
               data-tooltip-target="tooltip-new"
               type="button"
-              className="inline-flex items-center justify-center w-10 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
+              className="inline-flex items-center justify-center w-10 h-10 font-medium bg-blue-600 rounded-full hover:bg-blue-700 group focus:ring-4 focus:ring-blue-300 focus:outline-none "
               onClick={() => router.push('/Post')}
             >
               <svg
@@ -76,7 +76,7 @@ const BottomNav = () => {
           <div
             id="tooltip-new"
             role="tooltip"
-            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300  rounded-lg shadow-sm opacity-0 tooltip bg-gray-700"
           >
             Create new item
             <div className="tooltip-arrow" data-popper-arrow></div>
@@ -84,7 +84,7 @@ const BottomNav = () => {
           <button
             data-tooltip-target="tooltip-settings"
             type="button"
-            className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+            className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-800 group"
             onClick={() => router.push('/map')}
           >
             <CiMap className="w-8 h-8 text-white"/>
@@ -92,7 +92,7 @@ const BottomNav = () => {
           <div
             id="tooltip-settings"
             role="tooltip"
-            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300  rounded-lg shadow-sm opacity-0 tooltip bg-gray-700"
           >
             Settings
             <div className="tooltip-arrow" data-popper-arrow></div>
@@ -100,7 +100,7 @@ const BottomNav = () => {
           <button
             data-tooltip-target="tooltip-profile"
             type="button"
-            className="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
+            className="inline-flex flex-col items-center justify-center px-5 rounded-e-full  hover:bg-gray-800 group"
             onClick={() => router.push('/profile')}
           >
             <CgProfile  className="w-6 h-6 text-white"/>
@@ -108,7 +108,7 @@ const BottomNav = () => {
           <div
             id="tooltip-profile"
             role="tooltip"
-            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+            className="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300  rounded-lg shadow-sm opacity-0 tooltip bg-gray-700"
           >
             Profile
             <div className="tooltip-arrow" data-popper-arrow></div>
