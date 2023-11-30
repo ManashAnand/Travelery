@@ -48,6 +48,16 @@ const About = () => {
                 It's is advised to all of you to write loaction as suggested in dropdown in landing page
                 ` 
             },
+            {
+                title: "Why the vercel domain  ?",
+                content: `Currently we are using AWS cloud for all our database and don't want to waste more money, Once if the user get upto 100 we will update many things including domain  ` 
+            },
+            {
+                title: "The UI kinda sucks now ?",
+                content: `Sure I know that , but making everything and then doing things is not my way<br/> We will update the UI of the  webapp if you guys find it usefull 😄
+            
+                ` 
+            },
         ],
     };
     const styles = {
