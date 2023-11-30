@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import { NextProvider } from "@/redux/NextProvider";
 import Footer from "@/components/Footer";
+import CloseHover from "@/components/CloseHover";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,8 @@ export default function RootLayout({ children }) {
 
 
         <Navbar />
+        
+      <CloseHover/>
         <div className="w-full  flex justify-center items-center ">
           <div className=" w-[90%]  flex justify-center items-center flex-col ">
             {children}

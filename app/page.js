@@ -3,6 +3,7 @@ import Testimonials from "@/components/Testimonials";
 import ContributerCard from "./../components/ContributerCard";
 import FreeRide from "./../components/FreeRide";
 import useSWR from 'swr'
+import CloseHover from "@/components/CloseHover";
 
 export default function Home() {
   const fetcher = (...args) => fetch(...args).then(res => res.json())
