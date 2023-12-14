@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react'
-import animationData from '@/public/error.json'
+import animationData from '@/assets/error.json'
 import { motion } from "framer-motion";
 import Lootie from 'lottie-react'
 
