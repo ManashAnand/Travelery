@@ -83,7 +83,7 @@ const ContributerCard = ({data:Post}) => {
 
       {isDropdownOpen && (
         <div className="absolute z-10 mt-2  divide-y divide-gray-100 rounded-lg shadow w-44 bg-[#463638] -translate-x-16 sm:-translate-x-0">
-          <ul className="py-2 text-sm text-gray-700 ">
+          <ul className="py-2 text-sm text-white ">
             <li>
               <button  onClick={() => handleLocationSelect('bagulur')}
                 className="block px-4 py-2 w-full  hover:bg-gray-600 hover:text-white"

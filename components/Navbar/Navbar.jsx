@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" border-gray-200 bg-[#654C4F] flex justify-center items-center flex-col md:flex-row">
+    <nav className=" border-gray-200 bg-[#654C4F] text-white flex justify-center items-center flex-col md:flex-row">
       <div className="flex py-5 justify-between items-center w-[90%]">
         <Link
           href={"/"}
@@ -75,7 +75,7 @@ const Navbar = () => {
           {/* <li>
             <Link
               href="/map"
-              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-[#E9CE2C] hover:bg-[#E9CE2C] hover:text-white md:hover:bg-transparent"
+              className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-[#E9CE2C] hover:bg-[#E9CE2C] hover:text-white md:hover:bg-transparent"
             >
               Maps
             </Link>
@@ -83,7 +83,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/Post"
-              className="block py-2 px-3 text-gray-900 rounded  md:border-0  md:p-0  md:hover:text-[#E9CE2C] hover:bg-[#E9CE2C] hover:text-white md:hover:bg-transparent"
+              className="block py-2 px-3  rounded  md:border-0  md:p-0  md:hover:text-[#E9CE2C] hover:bg-[#E9CE2C] hover:text-white md:hover:bg-transparent"
             >
               Post
             </Link>
@@ -91,7 +91,7 @@ const Navbar = () => {
           {/* <li>
             <Link
               href="/login"
-              className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-[#E9CE2C] hover:bg-[#E9CE2C] hover:text-white md:hover:bg-transparent"
+              className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-[#E9CE2C] hover:bg-[#E9CE2C] hover:text-white md:hover:bg-transparent"
             >
               Login
             </Link>

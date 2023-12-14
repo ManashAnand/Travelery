@@ -5,7 +5,7 @@ import animationData from '@/public/error.json'
 import { motion } from "framer-motion";
 import Lootie from 'lottie-react'
 
-const Error = () => {
+ const Error = () => {
   return (
     <>
       <div className="flex justify-between items-center w-full  mt-8 mb-4 ">
