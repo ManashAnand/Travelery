@@ -10,7 +10,7 @@ export default function Home() {
 
   const { data, error, isLoading } = useSWR('https://vbps4gqg55.execute-api.ap-south-1.amazonaws.com/', fetcher)
   
-  if (error) return <Error/>
+  if (error) return <h1>Error...</h1>
   if (isLoading) return <h1>Loading...</h1>
   return (
     
