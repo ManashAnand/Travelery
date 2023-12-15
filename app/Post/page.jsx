@@ -48,14 +48,27 @@ const Post = () => {
       alert("Please enter less than 280 characters");
       return;
     }
-    console.log(char);
-    console.log(role);
-    console.log(name);
-    console.log(no);
-    console.log(dest.toLowerCase());
-    console.log(vehicle);
-    console.log(calendarValue);
-    console.log(timePickerValue);
+    console.log(char.split(" "));
+    const descpChar = char.split(" ");
+
+    const wordsToCheck = ["fuck", "sex", "porn" ,"chod","madharchod","behenchod","lund","chut","motherfucker","bitch","asshole","muslim","masjid"];
+    // I know it's seem unappropriate but it's a college webapp
+
+    const containsAnyWord = descpChar.some(item => {
+      return wordsToCheck.some(word => item.includes(word));
+    });
+
+    if (containsAnyWord) {
+      alert("You can not abuse here ");
+      return;
+    } 
+    // console.log(role);
+    // console.log(name);
+    // console.log(no);
+    // console.log(dest.toLowerCase());
+    // console.log(vehicle);
+    // console.log(calendarValue);
+    // console.log(timePickerValue);
 
     try {
       const res = await axios.post(
