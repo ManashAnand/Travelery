@@ -30,7 +30,7 @@ const TestimonialCard = ({data}) => {
      <div className=" mt-6 w-full mb-8 ">
   <Marquee pauseOnHover gradient>
     {
-        data?.filter(item => item?.role === "Testimonials")?.map((item) => {
+        data?.filter(item => item?.role === "Testimonials")?.slice(0,6).map((item) => {
             return(
                 <>
                 <figure className=" ml-10 mt-4 relative rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10 max-w-sm">

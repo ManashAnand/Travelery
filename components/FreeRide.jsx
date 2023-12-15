@@ -38,7 +38,7 @@ const ContributerCard = ({data:Free}) => {
 
        <div className=" md:grid grid-cols-3 gap-4 flex flex-col mt-6  w-full">
    
-   {Free?.filter(item => item?.role === "Free")?.map((item) => (
+   {Free?.filter(item => item?.role === "Free")?.slice(0,12).map((item) => (
      <figure key={item?.id}
        style={{ backgroundColor: getRandomColor() }}
        className="  text-center p-6 rounded-lg shadow-lg min-w-3xl"
