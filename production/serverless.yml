@@ -46,3 +46,9 @@ functions:
       - httpApi:
           path: /
           method: delete
+  registerTraveler:
+    handler: /handlers/registerTravel.handler
+    events:
+      - httpApi:
+          path: /register-traveler
+          method: post
