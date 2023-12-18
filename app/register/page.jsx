@@ -1,15 +1,39 @@
 "use client";
 import React, { useState } from 'react'
 import Link  from 'next/link';
+import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const Register = () => {
   const [email,setEmail] = useState("");
   const [pass,setPass] = useState("");
 
-  const handleLogin = (e) => {
+  const router = useRouter()
+
+  const handleLogin = async (e) => {
     e.preventDefault();
     console.log(email+" "+pass)
+
+    try {
+      const res = await axios.post("https://vbps4gqg55.execute-api.ap-south-1.amazonaws.com/register-traveler",{email,pass});
+  
+      // console.log(res?.data);
+      // console.log(res?.status)
+      if(res?.status == 200){
+        router.push('/login')
+      }
+      else{
+        console.log("Error in logging from frontend")
+      }
+
+      
+    } catch (error) {
+      console.log("error in loggin from backend")
+      console.log(error);      
+    }
+
     
+
   }
 
   return (
