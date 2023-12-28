@@ -9,6 +9,7 @@ const Navbar = () => {
   const state = useSelector((state) => state.user)
   console.log("From navbar")
   console.log(state)
+  console.log(state?.data?.user?.imageUrl);
 
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -91,7 +92,16 @@ const Navbar = () => {
               Post
             </Link>
           </li>
-          <li>
+
+          {
+            Object.keys(state).length ? 
+            <>
+              
+              <img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={state?.data?.user?.imageUrl} alt="Bordered avatar"/>
+
+            </>
+            :<>
+            <li>
             <Link
               href="/login"
               className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-[#E9CE2C] hover:bg-[#E9CE2C] hover:text-white md:hover:bg-transparent"
@@ -99,6 +109,9 @@ const Navbar = () => {
               Login
             </Link>
           </li>
+            </>
+          }
+         
         
           <li>
             <label className="relative inline-flex items-center me-5 cursor-pointer">
