@@ -2,11 +2,14 @@
 import { dark, light } from "@/redux/slices/ThemeSlice";
 import Link from "next/link";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
 
-  const dispatch = useDispatch()
+  const state = useSelector((state) => state.user)
+  console.log("From navbar")
+  console.log(state)
+
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(true);
@@ -88,14 +91,14 @@ const Navbar = () => {
               Post
             </Link>
           </li>
-          {/* <li>
+          <li>
             <Link
               href="/login"
               className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 text-white md:hover:text-[#E9CE2C] hover:bg-[#E9CE2C] hover:text-white md:hover:bg-transparent"
             >
               Login
             </Link>
-          </li> */}
+          </li>
         
           <li>
             <label className="relative inline-flex items-center me-5 cursor-pointer">
@@ -106,13 +109,13 @@ const Navbar = () => {
                 checked={isChecked}
                 onChange={handleCheckboxChange}
               />
-              {/* <div
+              <div
                 className={`w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-red-300 peer-focus:ring-red-800 bg-blue-700 ${
                   isChecked
                     ? "peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-red-600"
                     : "peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all border-gray-600 peer-checked:bg-blue-600"
                 }`}
-              ></div> */}
+              ></div>
             </label>
           </li>
         </ul>

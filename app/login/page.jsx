@@ -3,8 +3,15 @@ import React, { useState } from 'react'
 import Link  from 'next/link';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import {logIn} from '@/redux/slices/UserSlice'
+import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/navigation';
+
 
 const Login = () => {
+
+  const dispatch = useDispatch()
+  const router = useRouter();
 
   const {
     register,
@@ -26,7 +33,8 @@ const Login = () => {
         console.log(data?.data?.user)
       }
       console.log(data);
-      
+      dispatch(logIn(data));
+      router.push('/');
     } catch (error) {
         console.log("error is "+error);
     }
