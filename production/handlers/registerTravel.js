@@ -6,7 +6,7 @@ const RegisterTraveler = async (event) => {
   const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
   var salt = bcrypt.genSaltSync(10);
-  const { email, pass } = JSON.parse(event.body);
+  const { name,email, pass,imageUrl } = JSON.parse(event.body);
   const createdAt = new Date().toISOString();
   const id = v4();
 
@@ -15,6 +15,8 @@ const RegisterTraveler = async (event) => {
     email,
     hashPass,
     createdAt,
+    name,
+    imageUrl,
     id
   };
   try {

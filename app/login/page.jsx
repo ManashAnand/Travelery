@@ -4,7 +4,9 @@ import Link  from 'next/link';
 const Login = () => {
   return (
     <>
-        <section className="mt-10 p-8 rounded-xl bg-[#654C4F] ">
+    <div className="h-screen ">
+
+        <section className="my-10 p-8 rounded-xl bg-[#654C4F]  ">
   <div className="h-full">
     {/* Left column container with background*/}
     <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
@@ -14,35 +16,24 @@ const Login = () => {
       {/* Right column container */}
       <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
         <form>
-          {/*Sign in section*/}
           <div className="flex flex-row items-center justify-center lg:justify-start">
             <p className="mb-4 mr-4 text-2xl text-yellow-300">Sign in with</p>
-            {/* Facebook */}
-          
+            
           </div>
-          {/* Separator between social media sign in and email/password sign in */}
-          {/* <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-            <p className="mx-4 mb-0 text-center font-semibold dark:text-white">
-              Or
-            </p>
-          </div> */}
-          {/* Email input */}
           <div className="relative mb-6 border-b-2 border-yellow-300" data-te-input-wrapper-init>
-            <input type="text" className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" id="exampleFormControlInput2" placeholder="Email address" />
-            <label htmlFor="exampleFormControlInput2" className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Email address
-            </label>
+            <input type="text" className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 " id="exampleFormControlInput2" placeholder="Email address" />
+          
           </div>
           {/* Password input */}
           <div className="relative mb-6 border-b-2 border-yellow-300" data-te-input-wrapper-init>
-            <input type="password" className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0" id="exampleFormControlInput22" placeholder="Password" />
-            <label htmlFor="exampleFormControlInput22" className="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary">Password
-            </label>
+            <input type="password" className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 " id="exampleFormControlInput22" placeholder="Password" />
+            
           </div>
           <div className="mb-6 flex items-center justify-between">
             {/* Remember me checkbox */}
            
             {/*Forgot password link*/}
-            <Link href="/">Forgot password?</Link>
+            {/* <Link href="/">Forgot password?</Link> */}
           </div>
           {/* Login button */}
           <div className="text-center lg:text-left ">
@@ -61,6 +52,7 @@ const Login = () => {
   </div>
 </section>
 
+</div>
     </>
   )
 }

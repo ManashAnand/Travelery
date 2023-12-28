@@ -52,3 +52,9 @@ functions:
       - httpApi:
           path: /register-traveler
           method: post
+  loginTraveler:
+    handler: /handlers/loginTravel.handler
+    events:
+      - httpApi:
+          path: /login-traveler
+          method: POST
