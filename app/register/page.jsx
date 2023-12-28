@@ -6,9 +6,6 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 
 const Register = () => {
-  const [name,setName] = useState("");
-  const [email,setEmail] = useState("");
-  const [pass,setPass] = useState("");
 
   const {
     register,
@@ -16,7 +13,7 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const handleLogin = async (data) => {
+  const handleRegister = async (data) => {
     // e.preventDefault()
     const image = data.image[0];
     const name = data.name;
@@ -62,38 +59,8 @@ const Register = () => {
         } catch (error) {
           console.log(error);
         }
-
     
   };
-
-  const router = useRouter()
-
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   console.log(email+" "+pass)
-
-  //   try {
-  //     const res = await axios.post("https://vbps4gqg55.execute-api.ap-south-1.amazonaws.com/register-traveler",{email,pass});
-  
-  //     // console.log(res?.data);
-  //     // console.log(res?.status)
-  //     if(res?.status == 200){
-  //       router.push('/login')
-  //     }
-  //     else{
-  //       console.log("Error in logging from frontend")
-  //     }
-
-      
-  //   } catch (error) {
-  //     console.log("error in loggin from backend")
-  //     console.log(error);      
-  //   }
-
-    
-
-  // }
-
   return (
     <>
 <section  className="my-10  p-8 rounded-xl bg-[#654C4F]">
@@ -103,7 +70,7 @@ const Register = () => {
         <img src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" className="w-full" alt="Phone image" />
       </div>
       <div className="md:w-8/12 lg:ml-6 lg:w-5/12 text-white">
-        <form onSubmit={handleSubmit(handleLogin)}>
+        <form onSubmit={handleSubmit(handleRegister)}>
           <div className="text-yellow-300 text-3xl mb-4">
             Register to have fun
           </div>
