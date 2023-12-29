@@ -1,6 +1,8 @@
 const { v4 } = require("uuid");
 const bcrypt = require("bcryptjs");
 const AWS = require("aws-sdk");
+const jwt = require('jsonwebtoken');
+require('dotenv').config()
 
 const RegisterTraveler = async (event) => {
   const dynamoDb = new AWS.DynamoDB.DocumentClient();
@@ -9,6 +11,8 @@ const RegisterTraveler = async (event) => {
   const { name,email, pass,imageUrl } = JSON.parse(event.body);
   const createdAt = new Date().toISOString();
   const id = v4();
+  console.log(process.env.SECRET_KEY);
+  const accessToken = jwt.sign(id, process.env.SECRET_KEY);
 
   const hashPass = bcrypt.hashSync(pass, salt);
   const LoginDetails = {
@@ -17,7 +21,8 @@ const RegisterTraveler = async (event) => {
     createdAt,
     name,
     imageUrl,
-    id
+    id,
+    accessToken
   };
   try {
       await dynamoDb
