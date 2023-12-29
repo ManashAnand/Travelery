@@ -96,9 +96,9 @@ const Navbar = () => {
           {
             Object.keys(state).length ? 
             <>
-              
-              <img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={state?.data?.user?.imageUrl} alt="Bordered avatar"/>
-
+              <Link href="/Profile" className="w-12 h-8 p-1 rounded-full">
+                <img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={state?.data?.user?.imageUrl} alt="Bordered avatar"/>
+              </Link>
             </>
             :<>
             <li>
