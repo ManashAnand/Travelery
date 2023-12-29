@@ -3,7 +3,8 @@ import Calender from "@/components/Calender";
 import TimePicker from "@/components/TImepicker/Timepicker";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const Post = () => {
   const [char, setChar] = useState("");
@@ -17,6 +18,8 @@ const Post = () => {
   const [timePickerValue, setTimePickerValue] = useState("12:00 PM");
 
   const router = useRouter();
+
+  const state = useSelector((state) => state.user)
 
   const handleCalendarChange = (value) => {
     console.log("from post page");
@@ -62,14 +65,6 @@ const Post = () => {
       alert("You can not abuse here ");
       return;
     } 
-    // console.log(role);
-    // console.log(name);
-    // console.log(no);
-    // console.log(dest.toLowerCase());
-    // console.log(vehicle);
-    // console.log(calendarValue);
-    // console.log(timePickerValue);
-
     try {
       const res = await axios.post(
         "https://vbps4gqg55.execute-api.ap-south-1.amazonaws.com/",
@@ -94,6 +89,12 @@ const Post = () => {
 
 
   };
+
+  useEffect(( ) => {
+    if(Object.keys(state).length == 0){
+      router.push('/login')
+    }
+  },[])
 
   return (
     <>
