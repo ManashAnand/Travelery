@@ -104,14 +104,12 @@ const Navbar = () => {
               </Link>
             </>
             :<>
-            <li>
             <Link
               href="/login"
               className="block py-2 px-3  rounded  md:hover:bg-transparent md:border-0  md:p-0 text-white md:hover:text-[#E9CE2C] hover:bg-[#E9CE2C] hover:text-white "
             >
               Login
             </Link>
-          </li>
             </>
           }
          

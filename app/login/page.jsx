@@ -33,6 +33,8 @@ const Login = () => {
         console.log(data?.data?.user)
       }
       console.log(data);
+      localStorage.setItem('accessToken',data?.data?.user);
+
       dispatch(logIn(data));
       router.push('/');
     } catch (error) {

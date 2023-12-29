@@ -3,11 +3,17 @@ import Testimonials from "@/components/Testimonials";
 import ContributerCard from "./../components/ContributerCard";
 import FreeRide from "./../components/FreeRide";
 import useSWR from 'swr'
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 
 export default function Home() {
-  const [page,setPage] = useState(1);
+
+  useEffect(() => {
+    // console.log("working")
+    const data = localStorage.getItem('accessToken')
+    console.log("from useEffect")
+    console.log(JSON.stringify(data))
+  },[])
 
   const fetcher = (...args) => fetch(...args).then(res => res.json())
 
@@ -15,6 +21,9 @@ export default function Home() {
   
   if (error) return <h1>Error...</h1>
   if (isLoading) return <h1>Loading...</h1>
+
+  
+
   return (
     
     <>
