@@ -138,9 +138,9 @@ const Register = () => {
         <div className="mb-6 flex items-center justify-between">
             
             {/* Forgot password link */}
-            <p className="mb-0 mt-2 pt-1 text-sm font-semibold text-yellow-300">
+            <p className="mb-0 mt-2 pt-1 text-sm font-semibold text-yellow-300 ">
               Already have an account?
-              <Link href="/login" className="text-white ml-2 transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 ">Login</Link>
+              <Link href="/login" className="text-white ml-2 transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700 hover:bg-yellow-500 p-2 rounded-md ">Login</Link>
             </p>
           </div>
       </div>
