@@ -130,7 +130,7 @@ const ContributerCard = ({data:Post}) => {
           (item) =>
             item?.role === 'Equity' &&
             (!selectedLocation || item?.location === selectedLocation)
-        ).slice(0,12).map((item) => (
+        ).slice(0,15).map((item) => (
           <figure 
           key={item?.id}
             style={{ backgroundColor: getRandomColor() }}

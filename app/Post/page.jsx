@@ -92,7 +92,7 @@ const Post = () => {
 
   useEffect(( ) => {
     if(Object.keys(state).length == 0){
-      router.push('/login')
+      router.push('/')
     }
   },[])
 
