@@ -22,6 +22,8 @@ const Profile = () => {
 
     const handleLogout = (e) => {
       dispatch(logOut())
+      localStorage.clear();
+      router.push('/')
     }
 
   return (
