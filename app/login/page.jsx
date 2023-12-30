@@ -33,7 +33,7 @@ const Login = () => {
         console.log(data?.data?.user)
       }
       console.log(data);
-      localStorage.setItem('accessToken',data?.data?.user);
+      localStorage.setItem('accessToken',JSON.stringify(data?.data?.user));
 
       dispatch(logIn(data));
       router.push('/');

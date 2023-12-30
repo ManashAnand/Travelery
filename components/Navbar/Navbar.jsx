@@ -8,8 +8,9 @@ const Navbar = () => {
 
   const state = useSelector((state) => state.user)
   console.log("From navbar")
-  console.log(state)
-  console.log(state?.data?.user?.imageUrl);
+  // console.log(state)
+  // console.log(state?.data?.user?.imageUrl);
+  // console.log(state?.imageUrl)
 
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -100,7 +101,7 @@ const Navbar = () => {
             Object.keys(state).length ? 
             <>
               <Link href="/Profile" className="w-12 h-12 p-1 rounded-full">
-                <img class="w-16 h-12 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={state?.data?.user?.imageUrl} alt="Bordered avatar"/>
+                <img class="w-16 h-12 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={state?.data?.user?.imageUrl || state?.imageUrl} alt="Bordered avatar"/>
               </Link>
             </>
             :<>

@@ -4,15 +4,22 @@ import ContributerCard from "./../components/ContributerCard";
 import FreeRide from "./../components/FreeRide";
 import useSWR from 'swr'
 import { useState,useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logIn } from "@/redux/slices/UserSlice";
 
 
 export default function Home() {
 
+  const state = useSelector((state) => state.user)
+  const dispatch = useDispatch();
+
   useEffect(() => {
     // console.log("working")
     const data = localStorage.getItem('accessToken')
-    console.log("from useEffect")
-    console.log(JSON.stringify(data))
+    // console.log("from useEffect")
+    // console.log(JSON.parse(data))
+    dispatch(logIn(JSON.parse(data)))
+    
   },[])
 
   const fetcher = (...args) => fetch(...args).then(res => res.json())
