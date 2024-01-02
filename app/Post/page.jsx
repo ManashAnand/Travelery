@@ -21,6 +21,8 @@ const Post = () => {
 
   const state = useSelector((state) => state.user)
 
+  console.log(state);
+
   const handleCalendarChange = (value) => {
     console.log("from post page");
     const formattedDate = value.toLocaleDateString("en-US", {
@@ -77,11 +79,12 @@ const Post = () => {
           preferredVehicle: vehicle,
           name: name,
           role,
+          email:state?.data?.user?.email || state?.email
         }
       );
       console.log(res);
       if(res.status  == 200){
-        // router.push("/");
+        router.push("/");
       }
     } catch (error) {
       console.log(error);
@@ -159,7 +162,7 @@ const Post = () => {
                 onChange={(e) => setName(e.target.value)}
               />
               <label
-                for="floating_company"
+                htmlFor="floating_company"
                 className="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Name
@@ -181,7 +184,7 @@ const Post = () => {
                     onChange={(e) => setNo(e.target.value)}
                   />
                   <label
-                    for="floating_phone"
+                    htmlFor="floating_phone"
                     className="peer-focus:font-medium absolute text-sm text-white dark:text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                   >
                     Phone number (123-456-7890)
@@ -200,7 +203,7 @@ const Post = () => {
           {(role == "Equity" || role == "Free") && (
             <div class="max-w-full mx-auto mb-4">
               <label
-                for="message"
+                htmlFor="message"
                 class="block mb-2 text-sm font-medium text-white dark:text-white"
               >
                 Location
@@ -220,7 +223,7 @@ const Post = () => {
             <>
               <div class="max-w-full mx-auto mb-4">
                 <label
-                  for="message"
+                  htmlFor="message"
                   class="block mb-2 text-sm font-medium text-white dark:text-white"
                 >
                   Preferred Vehicle

@@ -58,3 +58,9 @@ functions:
       - httpApi:
           path: /login-traveler
           method: POST
+  getTravelByEmail:
+    handler: /handlers/getItemByEmail.handler
+    events:
+      - httpApi:
+          path: /getTravelByEmail
+          method: Post

@@ -12,7 +12,8 @@ const PostTravel = async (event) => {
     timeOfTravel,
     preferredVehicle,
     name,
-    role
+    role,
+    email
   } = JSON.parse(event.body);
   const createdAt = new Date().toISOString();
   const id = v4();
@@ -27,7 +28,8 @@ const PostTravel = async (event) => {
     preferredVehicle,
     createdAt,
     name,
-    role
+    role,
+    email
   };
 
   await dynamoDb
