@@ -1,6 +1,7 @@
 "use client";
 
 import ContributerCard from "@/components/ContributerCard";
+import FreeRide from "@/components/FreeRide";
 import { logOut } from "@/redux/slices/UserSlice";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -117,6 +118,8 @@ const Profile = () => {
       </div>
 
               <ContributerCard data={userData} showDeleteBtn={true}/>
+              <FreeRide data={userData} showDeleteBtn={true}/>
+              
       
     </>
   );

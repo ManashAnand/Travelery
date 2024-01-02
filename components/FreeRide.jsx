@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { mutate } from "swr";
 
-const ContributerCard = ({data:Free}) => {
+const ContributerCard = ({data:Free ,showDeleteBtn}) => {
  
   const getRandomColor = () => {
     const colors = ["#E9CE2C", "#654C4F", "#0081af","#94B0DA","#16BAC5"];
@@ -85,14 +85,17 @@ const ContributerCard = ({data:Free}) => {
        <div className="text-white mt-2">
          User Vehicle: {item?.preferredVehicle}
        </div>
-     
-       {/* <button
-         type="button"
-         class="mt-2 text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 border-red-500 text-red-500 hover:text-white hover:bg-red-600 focus:ring-red-900"
-         onClick={() => handleDelete(item?.id)}
-       >
-         Delete
-       </button> */}
+
+      {
+        showDeleteBtn && (
+            <button
+              type="button"
+              className="mt-2 border-2 border-red-500 hover:bg-red-400 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2  text-red-500 hover:text-white " onClick={() => handleDelete(item?.id)}
+            >
+              Delete
+            </button>
+        )
+      }
      </figure>
    ))}
  </div>
