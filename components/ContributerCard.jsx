@@ -5,12 +5,14 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { mutate } from "swr";
 
-const ContributerCard = ({data:Post}) => {
+const ContributerCard = ({data:Post ,showDeleteBtn}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   const router = useRouter()
-
+  console.log("sahi jagah hai")
+  console.log(Post)
+  console.log(showDeleteBtn)
   const handleLocationSelect = (location) => {
     setSelectedLocation(location);
     setIsDropdownOpen(false);
@@ -73,9 +75,9 @@ const ContributerCard = ({data:Post}) => {
         >
           <path
             stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+           strokeWidth="2"
             d="m1 1 4 4 4-4"
           />
         </svg>
@@ -179,13 +181,22 @@ const ContributerCard = ({data:Post}) => {
               Preferred vehicle: {item?.preferredVehicle}
             </div>
 
-             {/* <button
+            {
+              showDeleteBtn && (
+              
+                  <>
+                  <button
               type="button"
-              class="mt-2  border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 border-red-500 text-red-500 hover:text-white hover:bg-red-600 focus:ring-red-900"
+              className="mt-2 border-2 border-red-500 hover:bg-red-400 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2  text-red-500 hover:text-white "
               onClick={() => handleDelete(item?.id)}
             >
               Delete
-            </button>  */}
+            </button> 
+                  </>
+                
+              )
+            }
+            
           </figure>
         ))}
       </div>

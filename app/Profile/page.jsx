@@ -1,21 +1,35 @@
 "use client";
 
+import ContributerCard from "@/components/ContributerCard";
 import { logOut } from "@/redux/slices/UserSlice";
+import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const Profile = () => {
+    
 
     const state = useSelector((state) => state.user)
-    
+    const [userData,setUserData] = useState([]);
+
+    const getUserPosts =  async() => {
+      const email = state?.data?.user?.email || state?.email;
+
+      const res = await axios.post(`https://vbps4gqg55.execute-api.ap-south-1.amazonaws.com/getTravelByEmail`,{email});
+      // console.log(res?.data);
+      // setUserData(res?.data);
+      setUserData((prevUserData) => [ ...res?.data]);
+
+    }
     useEffect(() => {
         if(Object.keys(state).length == 0){
           router.push('/')
         }
+        getUserPosts();
     },[])
-    console.log("From profile page")
-    console.log(state)
+    // console.log("From profile page")
+    // console.log(state?.data?.user?.email || state?.email)
 
     const router  = useRouter()
     const dispatch = useDispatch()
@@ -28,8 +42,8 @@ const Profile = () => {
 
   return (
     <>
-      <div className="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover">
-        <div className="max-w-4xl flex items-center h-auto lg:h-screen  flex-wrap mx-auto my-32 lg:my-0">
+      <div className="font-sans my-10 antialiased text-gray-900 leading-normal tracking-wider bg-cover">
+        <div className="max-w-4xl flex items-center    flex-wrap mx-auto my-32 lg:my-0">
           <div
             id="profile"
             className="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white border-2 opacity-75 mx-6 lg:mx-0"
@@ -101,6 +115,9 @@ const Profile = () => {
           </div>
         </div>
       </div>
+
+              <ContributerCard data={userData} showDeleteBtn={true}/>
+      
     </>
   );
 };
