@@ -82,9 +82,6 @@ const ContributerCard = ({data:Free ,showDeleteBtn}) => {
        </figcaption>
 
        
-       <div className="text-white mt-2">
-         User Vehicle: {item?.preferredVehicle}
-       </div>
 
       {
         showDeleteBtn && (
