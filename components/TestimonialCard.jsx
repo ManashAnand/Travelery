@@ -3,7 +3,7 @@ import React from 'react'
 import Marquee from "react-fast-marquee";
 import { mutate } from 'swr';
 
-const TestimonialCard = ({data}) => {
+const TestimonialCard = ({data,showDeleteBtn}) => {
   
   const handleDelete = async (_id) => {
   
@@ -53,13 +53,21 @@ const TestimonialCard = ({data}) => {
                 <span>{item?.timeOfTravel}</span>
         </div>
     </figcaption>
-    {/* <button
-         type="button"
-         className="mt-2 text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 border-red-500 text-red-500 hover:text-white hover:bg-red-600 focus:ring-red-900"
-         onClick={() => handleDelete(item?.id)}
-       >
-         Delete
-       </button> */}
+
+    {
+      showDeleteBtn && (
+        <>
+
+        <button
+            type="button"
+            className="mt-2 text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 border-red-500 text-red-500 hover:text-white hover:bg-red-600 focus:ring-red-900"
+            onClick={() => handleDelete(item?.id)}
+          >
+            Delete
+          </button>
+        </>
+      )
+    }
 </figure> 
                 </>
             )

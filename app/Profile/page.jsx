@@ -2,6 +2,7 @@
 
 import ContributerCard from "@/components/ContributerCard";
 import FreeRide from "@/components/FreeRide";
+import Testimonials from "@/components/Testimonials";
 import { logOut } from "@/redux/slices/UserSlice";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -119,7 +120,7 @@ const Profile = () => {
 
               <ContributerCard data={userData} showDeleteBtn={true}/>
               <FreeRide data={userData} showDeleteBtn={true}/>
-              
+              <Testimonials data={userData} showDeleteBtn={true}/>
       
     </>
   );
